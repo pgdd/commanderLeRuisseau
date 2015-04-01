@@ -1,0 +1,29 @@
+<template name="burgerMenu">
+    <ol class="board">
+      {{#each burgers}}
+        {{> burger}}
+      {{/each}}
+    </ol>
+    {{#if selectedName}}
+      <div class="details">
+        <div class="name">{{selectedName}}</div>
+        <button class="inc">ajouter</button>
+      </div>
+    {{else}}
+      <div class="message">Click a burger</div>
+    {{/if}}
+</template>
+
+<template name="burger">
+  <li class="burger {{selected}}">
+    <span class="name"><h2>{{name}}</h2></span>
+    <span class="score"><p>{{ingredients}}</p></span>
+  </li>
+</template>
+
+<template name="cooking">
+  <li class="burger {{selected}}">
+    <span class="name"><h2>{{name}}</h2></span>
+    <span class="score"><p>{{ingredients}}</p></span>
+  </li>
+</template>
