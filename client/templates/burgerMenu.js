@@ -1,5 +1,7 @@
 if (Meteor.isClient) {
   Meteor.subscribe('menu');
+  Template.takeAway.rendered = function () {
+  };
   Template.burgerMenu.rendered = function () {
     Meteor.subscribe("users");
     $("body").css("background-attachment",'inherit');
@@ -17,16 +19,47 @@ if (Meteor.isClient) {
       return burger && burger.name;
     }
   });
+  // function menu(burger, cooking, drink) {
+  //   this.burger = burger;
+  //   this.cooking = cooking;
+  //   this.drink = drink;
+  // }
 
-  Template.burgerMenu.events({
-    'click .inc': function () {
-      Meteor.call('updateUserCharge', Session.get("selectedBurger"), Meteor.user());
+  // function order(menus, status, name, phone)
+  //   this.menus = menus;
+  //   this.status = status;
+  //   this.name = name;
+  //   this.phone = name;
+  // }
+  Template.takeAway.helpers({
+    initiatedOrder: function () {
+        initiatedOrder = Session.get('initiatedOrder');
+        return initiatedOrder;
     }
   });
+  Template.burgerMenu.events({
+    'click .inc': function () {
+      Session.set('initiatedOrder', true);
+    }
+  });
+      // initiateOrder = function () {
+      //   var menus = new(Array);
+      //   var currentBurger = Menu.findOne(Session.get("selectedBurger"))
+      //   var currentMenu = new menu(currentBurger)
+      //   currentMenu.cooking = Session.get("selectedCooking")
+      //   currentMenu.drink = Session.get("selectedDrink")
+      //   var currentOrder= new order()
+
 
   Template.burger.helpers({
     selected: function () {
       return Session.equals("selectedBurger", this._id) ? "selected" : '';
+    }
+  });
+
+  Template.cooking.helpers({
+    selectedBurger: function () {
+      return Menu.findOne(Session.get("selectedBurger"));
     }
   });
 

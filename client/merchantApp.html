@@ -12,13 +12,11 @@
     <div class="outer">
         {{#if currentUser}}
           <div class="logo"></div>
-          <h1 class="title">BURGER À EMPORTER AVEC FRITTES ET BOISSON OFFERTE 10E</h1>
-          <div class="subtitle">Le pain de nos hamburgers est fait tous les jours sur place, notre viande est issue d'un élevage traditionnel "Les viandes du Chateauneuf" dans le Pas-de-calais. </div>
         {{else}}
-            <h1 class="title">Concierge board</h1>
+            <h1 class="title">NON CONNECTE</h1>
         {{/if}}
         {{#if currentUser}}
-            {{> burgerMenu}}
+            {{> takeAway}}
         {{else}}
             {{> signin}}
         {{/if}}
