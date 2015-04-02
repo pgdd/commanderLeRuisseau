@@ -11,3 +11,12 @@ Meteor.publish('users', function (group) {
 Meteor.publish("menu", function () {
   return Menu.find();
 });
+Meteor.publish("products", function () {
+  return Products.find();
+});
+Meteor.publish("cookings", function () {
+  return Cookings.find();
+});
+Meteor.publish("drinks", function () {
+  return Cookings.find();
+});

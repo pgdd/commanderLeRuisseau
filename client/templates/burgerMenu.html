@@ -1,9 +1,12 @@
 <template name= "takeAway">
-    {{#if initiatedOrder}}
-      {{> interrogation}}
-    {{else}}
-      {{> burgerMenu}}
-    {{/if}}
+  <div class="outer">
+    <div class="logo"></div>
+      {{#if currentUser}}
+          {{> yield}}
+      {{else}}
+          {{> signin}}
+      {{/if}}
+    </div>
 </template>
 <template name="burgerMenu">
     <h1 class="title">BURGER À EMPORTER AVEC FRITTES ET BOISSON OFFERTE 10E</h1>
@@ -30,35 +33,4 @@
   </li>
 </template>
 
-<template name="interrogation">
-  {{#if confirmedCooking}}
-    {{> drinks}}
-  {{else}}
-    {{> cooking}}
-  {{/if}}
-</template>
 
-<template name="cooking">
-  Ta séléction:
-  <h1 class="title">{{selectedBurger.name}}</h1>
-  <h2 class="title">hello {{selectedBurger.ingredients}}</h2>
-  <h3> Quel cuisson pour ce burger ? </h3>
-  <ol class="board">
-    <li class="burger apoint">a point</li>
-    <li class="burger apoint">a point</li>
-    <li class="burger apoint">a point</li>
-    <li class="burger apoint">a point</li>
-  </ol>
-  <div class="details">
-        <!-- <div class="name">{{selectedName}}</div> -->
-        <button class="inc">Annuler</button>
-  </div>
-
-</template>
-<template name="drinks">
-  hello drinks
-  <li class="burger {{selected}}">
-    <span class="name"><h2>{{name}}</h2></span>
-    <span class="score"><p>{{ingredients}}</p></span>
-  </li>
-</template>

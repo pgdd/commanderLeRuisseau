@@ -1,0 +1,24 @@
+<template name="drinks">
+    <h1 class="title">BURGER À EMPORTER AVEC FRITTES ET BOISSON OFFERTE 10E</h1>
+    <div class="subtitle">Le pain de nos hamdrinks est fait tous les jours sur place, notre viande est issue d'un élevage traditionnel "Les viandes du Chateauneuf" dans le Pas-de-calais. </div>
+    <ol class="board">
+      {{#each drinks}}
+        {{> drink}}
+      {{/each}}
+    </ol>
+    {{#if selectedName}}
+      <div class="details">
+        <div class="name">{{selectedName}}</div>
+        <button class="inc">ajouter</button>
+      </div>
+    {{else}}
+      <div class="message">Click a drink</div>
+    {{/if}}
+</template>
+
+<template name="drink">
+  <li class="burger {{selected}}">
+    <span class="name"><h2>{{name}}</h2></span>
+    <!-- <span class="score"><p>{{ingredients}}</p></span> -->
+  </li>
+</template>
