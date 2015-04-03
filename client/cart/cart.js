@@ -1,5 +1,5 @@
 Template.cart.cartitems = function(){
-   
+
 };
 Template.cart.helpers({
     'cartitems':function(){
@@ -18,7 +18,7 @@ Template.cart.helpers({
     shopCart.subtotal = total;
     shopCart.tax = shopCart.subtotal * .06;
     shopCart.total = shopCart.subtotal + shopCart.tax;
-    return shopCart; 
+    return shopCart;
     }
 })
 

@@ -17,6 +17,9 @@ Meteor.publish("products", function () {
 Meteor.publish("cookings", function () {
   return Cookings.find();
 });
-Meteor.publish("drinks", function () {
-  return Cookings.find();
+Meteor.publish("cartitems", function () {
+  return CartItems.find();
+});
+Meteor.publish("cart", function () {
+  return Cart.find();
 });

@@ -2,6 +2,8 @@ if (Meteor.isClient) {
   Meteor.subscribe('menu');
   Meteor.subscribe('products');
   Meteor.subscribe('cookings');
+  Meteor.subscribe('cartitems');
+  Meteor.subscribe('cart');
   Template.signin.rendered = function () {
     Meteor.subscribe("users");
   };
