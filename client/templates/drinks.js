@@ -18,9 +18,17 @@ if (Meteor.isClient) {
   Template.drinks.events({
     'click .inc': function () {
       Session.set('initiatedOrder', true);
-      Router.go('/bacon');
+      var qty = 1;
+      var product = Session.get('selectedBurger');
+      var cooking = Session.get('selectedCooking');
+      var bacon = Session.get('bacon');
+      var drink = Session.get('selectedDrink');
+      var sessid = Meteor.default_connection._lastSessionId;
+      Meteor.call('addToCart',qty,product,cooking,bacon,drink,sessid);
+      Router.go('/cart');
     }
   });
+
   Template.drink.helpers({
     selected: function () {
       return Session.equals("selectedDrink", this._id) ? "selected" : '';

@@ -2,6 +2,8 @@
   <div class="outer">
     <div class="logo"></div>
       {{#if currentUser}}
+          <h1 class="title">BURGER À EMPORTER AVEC FRITES ET BOISSON OFFERTE 10E</h1>
+<!--           <div class="subtitle">Le pain de nos hamburgers est fait tous les jours sur place, notre viande est issue d'un élevage traditionnel "Les viandes du Chateauneuf" dans le Pas-de-calais. </div> -->
           {{> yield}}
       {{else}}
           {{> signin}}
@@ -9,8 +11,6 @@
     </div>
 </template>
 <template name="burgerMenu">
-    <h1 class="title">BURGER À EMPORTER AVEC FRITTES ET BOISSON OFFERTE 10E</h1>
-    <div class="subtitle">Le pain de nos hamburgers est fait tous les jours sur place, notre viande est issue d'un élevage traditionnel "Les viandes du Chateauneuf" dans le Pas-de-calais. </div>
     <ol class="board">
       {{#each burgers}}
         {{> burger}}

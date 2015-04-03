@@ -44,9 +44,9 @@ Meteor.methods({
         Categories.remove({});
         CartItems.remove({});
     },
-    addToCart:function(qty,product,session){
+    addToCart:function(qty,product,cooking,bacon,drink,session){
         if(qty > 0){
-            CartItems.insert({qty:qty,product:product,sessid:session});
+            CartItems.insert({qty:qty,product:product,cooking:cooking,bacon:bacon,drink:drink,sessid:session});
         } else{
             console.log('Quantity is Zero');
         }
