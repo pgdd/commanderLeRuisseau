@@ -38,6 +38,14 @@ if (Meteor.isClient) {
     'click': function () {
       Session.set("selectedDrink", this._id);
       console.log(Session.get("selectedDrink"));
+      var qty = 1;
+      var product = Session.get('selectedBurger');
+      var cooking = Session.get('selectedCooking');
+      var bacon = Session.get('bacon');
+      var drink = Session.get('selectedDrink');
+      var sessid = Meteor.default_connection._lastSessionId;
+      Meteor.call('addToCart',qty,product,cooking,bacon,drink,sessid);
+      Router.go('/cart');
     }
   })
 }

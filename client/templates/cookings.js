@@ -30,6 +30,7 @@ if (Meteor.isClient) {
     'click': function () {
       Session.set("selectedCooking", this._id);
       console.log(Session.get("selectedCooking"));
+      Router.go('/bacon');
     }
   })
 }

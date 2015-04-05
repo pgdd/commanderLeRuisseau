@@ -10,9 +10,12 @@
   margin: 3em 0;
   padding: 0;
 }*/
+ul li {
+  display: inline;
+}
 
 .outer {
-  padding-top: 40px;
+  padding-top: 70px;
   width: auto;
   height: auto;
   margin: 0 auto;
@@ -23,9 +26,9 @@
   background-repeat: no-repeat;
   background-size: contain;
   height: 7em;
-  margin: 0 auto -2.9em;
+  margin: 0 auto -4.9em;
   // padding-bottom: em;
-  width: 7em;
+  width: 5.2em;
 }
 
 
@@ -40,12 +43,13 @@
 
 .title {
   font-family: 'LandryGothic';
+  color: #aaa;
   letter-spacing: .3em;
   margin: 0 0 .25em;
-  text-align: right;
+  text-align: left;
   text-indent: .3em;
   text-transform: uppercase;
-  line-height: 2em
+  // line-height: 2em
 }
 
 .subtitle {
@@ -201,3 +205,128 @@
     background-color: #fefff4;
   }
 }
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900);  /* <-- Just for the demo, Yes I like pretty fonts... */
+
+.square {
+    float:left;
+    position: relative;
+    width: 30%;
+    padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-color:#1E1E1E;
+    overflow:hidden;
+}
+
+.content {
+    position:absolute;
+    height:90%; /* = 100% - 2*5% padding */
+    width:90%; /* = 100% - 2*5% padding */
+    padding: 5%;
+
+}
+.table{
+    display:table;
+    width:100%;
+    height:100%;
+}
+.table-cell{
+    display:table-cell;
+    vertical-align:middle;
+}
+/*  For list */
+
+
+
+/*  For responsive images */
+
+.content .rs{
+    width:auto;
+    height:auto;
+    max-height:90%;
+    max-width:100%;
+}
+/*  For responsive images as background */
+
+.bg{
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
+    color:#fff;
+}
+/*  following just for the demo */
+
+
+
+header {
+  position: absolute;
+  top:0;
+  height: 44px;
+  line-height: 44px;
+  width: 100%;
+  padding-top: 2.9px;
+  margin-bottom: 100em;
+  // background-color: rgba(248, 248, 248, 0.9);
+  background-image: linear-gradient(0deg, rgb(200, 199, 204), rgb(200, 199, 204) 50%, transparent 50%);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  z-index: 10;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-touch-callout: none;
+}
+header button {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  font-size: 17px;
+  color:rgb(21, 125, 251);
+  padding: 0;
+  font-weight: 300;
+  height: 44px;
+  line-height: 44px;
+  text-overflow: ellipsis !important; /* why so !important ? */
+  max-width: 140px;
+}
+header button:active {
+  opacity: 0.3;
+}
+header button.bold {
+  font-weight: 500;
+}
+header button.green {
+  color:rgb(41, 197, 25);
+}
+header button.disabled {
+  color:rgb(200, 199, 204);
+}
+header button.arrow {
+  background-size: 24px 44px;
+  background-repeat: no-repeat;
+}
+
+header button.left {
+  left:0;
+  padding-left: 9px;
+}
+header button.left.arrow {
+  padding-left: 23px;
+  background-image: url(../img/backBtn.svg);
+  background-position: left bottom;
+}
+header button.right {
+  right:0;
+  text-align: right;
+  padding-right: 9px;
+}
+header button.right.arrow {
+  padding-right: 23px;
+  background-image: url(../img/nextBtn.svg);
+  background-position: right bottom;
+}
+

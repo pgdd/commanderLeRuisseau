@@ -1,14 +1,35 @@
 <template name= "takeAway">
-  <div class="outer">
-    <div class="logo"></div>
-      {{#if currentUser}}
-          <h1 class="title">BURGER À EMPORTER AVEC FRITES ET BOISSON OFFERTE 10E</h1>
+      <header>
+        <button class="left arrow">
+        <div class="label"></div>
+        &nbsp;
+
+        &nbsp;
+
+        </button>
+          <div class="logo"></div>
+        &nbsp;
+        <button class="right arrow">
+          <div class="label"></div>
+        &nbsp;
+        </button>
+      </header>
+    <div class="content-scrollable">
+      <div class="outer">
+        <h1 class="title">BURGER À EMPORTER AVEC FRITES ET BOISSON OFFERTE 10E</h1>
+
+        {{#if currentUser}}
+            {{> yield}}
+        {{else}}
+            {{> signin}}
+        {{/if}}
+
+
+
 <!--           <div class="subtitle">Le pain de nos hamburgers est fait tous les jours sur place, notre viande est issue d'un élevage traditionnel "Les viandes du Chateauneuf" dans le Pas-de-calais. </div> -->
-          {{> yield}}
-      {{else}}
-          {{> signin}}
-      {{/if}}
     </div>
+  </div>
+
 </template>
 <template name="burgerMenu">
     <ol class="board">
@@ -16,21 +37,24 @@
         {{> burger}}
       {{/each}}
     </ol>
-    {{#if selectedName}}
+    <!-- {{#if selectedName}}
       <div class="details">
         <div class="name">{{selectedName}}</div>
         <button class="inc">ajouter</button>
       </div>
     {{else}}
       <div class="message">Click a burger</div>
-    {{/if}}
+    {{/if}} -->
 </template>
 
 <template name="burger">
-  <li class="burger {{selected}}">
-    <span class="name"><h2>{{name}}</h2></span>
-    <span class="score"><p>{{ingredients}}</p></span>
-  </li>
+
+    <li class="burger {{selected}}">
+      <span class="name"><h2>{{name}}</h2></span>
+      <span class="score"><p>{{ingredients}}</p></span>
+    </li>
+      <span class="arrow"><p>></p></span>
+
 </template>
 
 

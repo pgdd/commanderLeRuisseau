@@ -1,22 +1,16 @@
 <template name="cookings">
-    <ol class="board">
-      {{#each cookings}}
-        {{> cooking}}
-      {{/each}}
-    </ol>
-    {{#if selectedName}}
-      <div class="details">
-        <div class="name">{{selectedName}}</div>
-        <button class="inc">ajouter</button>
-      </div>
-    {{else}}
-      <div class="message">Click a cooking</div>
-    {{/if}}
+  {{#each cookings}}
+    {{> cooking}}
+  {{/each}}
 </template>
-
 <template name="cooking">
-  <li class="burger {{selected}}">
-    <span class="name"><h2>{{name}}</h2></span>
-    <!-- <span class="score"><p>{{ingredients}}</p></span> -->
-  </li>
+  <div class="square">
+    <div class="content">
+        <div class="table">
+            <div class="table-cell">
+              {{name}}
+            </div>
+        </div>
+    </div>
+  </div>
 </template>
