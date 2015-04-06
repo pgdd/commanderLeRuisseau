@@ -46,24 +46,26 @@ ul li {
   color: #aaa;
   letter-spacing: .3em;
   margin: 0 0 .25em;
-  text-align: left;
+  text-align: center;
   text-indent: .3em;
   text-transform: uppercase;
-  // line-height: 2em
+  line-height: 2em;
+  // margin-bottom: 20px;
+  // margin-left: 25px;
 }
 
 .subtitle {
   font-family: 'LandryGothic';
-  color: white;
-  background-color: black;
+  // color: white;
+  // background-color: black;
   font-size: .575em;
   line-height: 1em;
   margin-top: 2em;
-  margin-bottom: 2em;
-  // margin-rigt: 2em;
+  margin-bottom: 200px;
+  margin-rigt: 2em;
   margin-left: 2em;
-  text-align: left;
-  // display: inline;
+  text-align: center;
+  display: inline;
 }
 
 .board {
@@ -72,6 +74,7 @@ ul li {
   list-style-type: none;
   margin: 0 0 1.5em;
   padding: 0;
+  margin-top: 1.7em;
 }
 
 .burger {
@@ -112,7 +115,7 @@ ul li {
 .burger .score {
   color: #333;
   display: block;
-  float: right;
+  float: left;
   font-size: 1.25em;
   font-weight: 600;
   line-height: 2.4em;
@@ -211,13 +214,17 @@ ul li {
 @import url(http://fonts.googleapis.com/css?family=Lato:400,900);  /* <-- Just for the demo, Yes I like pretty fonts... */
 
 .square {
+    border-width:1px;
+    border-style:dotted;
+    border-color:black;
     float:left;
     position: relative;
-    width: 30%;
-    padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
+    width: 45%;
+    padding-bottom : 45%; /* = width for a 1:1 aspect ratio */
     margin:1.66%;
-    background-color:#1E1E1E;
     overflow:hidden;
+    background-color: rgba(248, 248, 248, 0.9);
+    background-image: linear-gradient(0deg, rgb(200, 199, 204), rgb(200, 199, 204) 50%);
 }
 
 .content {
@@ -261,15 +268,15 @@ ul li {
 
 
 header {
-  position: absolute;
+  position: fixed;
   top:0;
   height: 44px;
   line-height: 44px;
   width: 100%;
   padding-top: 2.9px;
   margin-bottom: 100em;
-  // background-color: rgba(248, 248, 248, 0.9);
-  background-image: linear-gradient(0deg, rgb(200, 199, 204), rgb(200, 199, 204) 50%, transparent 50%);
+  background-color: rgba(248, 248, 248, 0.9);
+  background-image: linear-gradient(0deg, rgb(200, 199, 204), rgb(200, 199, 204) 50%);
   background-size: 100% 1px;
   background-repeat: no-repeat;
   background-position: bottom;
@@ -329,4 +336,12 @@ header button.right.arrow {
   background-image: url(../img/nextBtn.svg);
   background-position: right bottom;
 }
-
+.burger:after {
+  content: '\203a';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -17px;
+  font: bold 32px/1 Avenir, Arial, sans-serif;
+  color: #a7a7a7;
+}

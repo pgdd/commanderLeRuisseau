@@ -16,7 +16,8 @@
       </header>
     <div class="content-scrollable">
       <div class="outer">
-        <h1 class="title">BURGER À EMPORTER AVEC FRITES ET BOISSON OFFERTE 10E</h1>
+        <h1 class="title"> 10€ À EMPORTER </h1>
+        <!-- <div class="subtitle">AVEC FRITES ET BOISSON OFFERTE </div> -->
 
         {{#if currentUser}}
             {{> yield}}
@@ -24,11 +25,8 @@
             {{> signin}}
         {{/if}}
 
-
-
-<!--           <div class="subtitle">Le pain de nos hamburgers est fait tous les jours sur place, notre viande est issue d'un élevage traditionnel "Les viandes du Chateauneuf" dans le Pas-de-calais. </div> -->
+      </div>
     </div>
-  </div>
 
 </template>
 <template name="burgerMenu">
@@ -52,8 +50,9 @@
     <li class="burger {{selected}}">
       <span class="name"><h2>{{name}}</h2></span>
       <span class="score"><p>{{ingredients}}</p></span>
+      <!-- <span class="arrow"><p>></p></span> -->
     </li>
-      <span class="arrow"><p>></p></span>
+
 
 </template>
 
