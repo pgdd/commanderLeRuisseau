@@ -1,10 +1,14 @@
 <template name="cookings">
-  <h1 class="title"> Quelle cuisson désirez-vous pour ce Blue Cheese Burger? </h1>
+  {{> selection}}
+  <div class="question">
+    <h1 class="title"> Quelle cuisson préférez-vous? </h1>
+  </div>
   <div class="answer">
     {{#each cookings}}
       {{> cooking}}
     {{/each}}
   </div>
+
 </template>
 <template name="cooking">
 

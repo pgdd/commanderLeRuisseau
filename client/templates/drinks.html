@@ -1,17 +1,19 @@
 <template name="drinks">
+    {{> selection}}
+    <h1 class="title">Quelle boisson pour votre menu ?</h1>
     <ol class="board">
       {{#each drinks}}
         {{> drink}}
       {{/each}}
     </ol>
-    {{#if selectedName}}
+    <!-- {{#if selectedName}}
       <div class="details">
         <div class="name">{{selectedName}}</div>
         <button class="inc">ajouter</button>
       </div>
     {{else}}
       <div class="message">Click a drink</div>
-    {{/if}}
+    {{/if}} -->
 </template>
 
 <template name="drink">

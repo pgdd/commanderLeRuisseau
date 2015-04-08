@@ -27,3 +27,7 @@ Template.cart.events({
         Meteor.call('removeCartItem',this._id);
     }
 });
+
+Template.cart.rendered = function () {
+    Session.set("previousPage", '/');
+};

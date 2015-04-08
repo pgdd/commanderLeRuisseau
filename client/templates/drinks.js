@@ -15,19 +15,19 @@ if (Meteor.isClient) {
       return drink && drink.name;
     }
   });
-  Template.drinks.events({
-    'click .inc': function () {
-      Session.set('initiatedOrder', true);
-      var qty = 1;
-      var product = Session.get('selectedBurger');
-      var cooking = Session.get('selectedCooking');
-      var bacon = Session.get('bacon');
-      var drink = Session.get('selectedDrink');
-      var sessid = Meteor.default_connection._lastSessionId;
-      Meteor.call('addToCart',qty,product,cooking,bacon,drink,sessid);
-      Router.go('/cart');
-    }
-  });
+  // Template.drinks.events({
+  //   'click .inc': function () {
+  //     Session.set('initiatedOrder', true);
+  //     var qty = 1;
+  //     var product = Session.get('selectedBurger');
+  //     var cooking = Session.get('selectedCooking');
+  //     var bacon = Session.get('bacon');
+  //     var drink = Session.get('selectedDrink');
+  //     var sessid = Meteor.default_connection._lastSessionId;
+  //     Meteor.call('addToCart',qty,product,cooking,bacon,drink,sessid);
+  //     Router.go('/cart');
+  //   }
+  // });
 
   Template.drink.helpers({
     selected: function () {
@@ -38,6 +38,7 @@ if (Meteor.isClient) {
     'click': function () {
       Session.set("selectedDrink", this._id);
       console.log(Session.get("selectedDrink"));
+      Session.set("confirmedMenu", true);
       var qty = 1;
       var product = Session.get('selectedBurger');
       var cooking = Session.get('selectedCooking');
@@ -45,7 +46,11 @@ if (Meteor.isClient) {
       var drink = Session.get('selectedDrink');
       var sessid = Meteor.default_connection._lastSessionId;
       Meteor.call('addToCart',qty,product,cooking,bacon,drink,sessid);
+      // Session.set('previousPage', '/drinks');
       Router.go('/cart');
     }
   })
+  Template.drink.rendered = function () {
+    Session.set("previousPage", '/bacon');
+  };
 }

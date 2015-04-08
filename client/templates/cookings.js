@@ -30,7 +30,12 @@ if (Meteor.isClient) {
     'click': function () {
       Session.set("selectedCooking", this._id);
       console.log(Session.get("selectedCooking"));
+      // Session.set("previousPage", '/cooking');
       Router.go('/bacon');
     }
-  })
+  });
+
+  Template.cooking.rendered = function () {
+    Session.set("previousPage", '/');
+  };
 }

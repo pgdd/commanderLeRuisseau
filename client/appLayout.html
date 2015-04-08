@@ -8,13 +8,65 @@
   <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-precomposed.png">
   <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">
 </head>
-<body>
+<template name="selection">
+  <div class="selection">
+    <h1 class="burgerSelection"> {{selectedBurger}} </h1>
+    <h1 class="cookingSelection">{{selectedCooking}} </h1>
+    {{#if selectedBacon}}
+      <h1 class="baconSelection">Suppl.bacon</h1>
+    {{/if}}
+    {{#if confirmedMenu}}
+      <div class="plus">+</div>
+      <h1 class="title">Frites Maison (offert)</h1>
+      <div class="plus">+</div>
+      <h1 class="title">{{selectedDrink}}</h1>
+      <div class="message">
+        <!-- <button class="addmenu">AJOUTER UN MENU</button> -->
+        <button class="btn-primary">COMMANDER</button>
+      </div>
+    {{/if}}
+  </div>
+</template>
+
+<template name="navbar">
+        {{#if backButton}}
+          <button class="left arrow">
+          <div class="label"></div>
+          &nbsp;
+
+          &nbsp;
+          </button>
+        {{/if}}
+            <div class="logo"></div>
+          &nbsp;
+        {{#if basket}}
+          <button class="right arrow">
+            <span class="label"></span>
+          &nbsp;
+          </button>
+        {{/if}}
 
 
+</template>
 
-</body>
+<template name= "takeAway">
+      <header>
+        {{> navbar}}
+      </header>
+    <div class="content-scrollable">
+      <div class="outer">
 
+        <!-- <div class="subtitle">AVEC FRITES ET BOISSON OFFERTE </div> -->
 
+        {{#if currentUser}}
+            {{> yield}}
+        {{else}}
+            {{> signin}}
+        {{/if}}
+
+      </div>
+    </div>
+</template>
 
 
 

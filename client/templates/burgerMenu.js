@@ -20,15 +20,17 @@ if (Meteor.isClient) {
 
   Template.burgerMenu.rendered = function () {
     Meteor.subscribe("users");
-   };
+    Session.set("previousPage", 'false');
+  };
+
 
   Template.burgerMenu.helpers({
     burgers: function () {
       return Products.find({catName: 'Burger'});
     },
     selectedName: function () {
-      var burger = Products.findOne(Session.get("selectedBurger"));
-      return burger && burger.name;
+      // var burger = Products.findOne(Session.get("selectedBurger"));
+      // return burger && burger.name;
     }
   });
   Template.burgerMenu.events({
@@ -48,8 +50,30 @@ if (Meteor.isClient) {
     'click': function () {
       Session.set("selectedBurger", this._id);
       console.log(Session.get("selectedBurger"));
+      Session.set("previousPage", '/');
+      console.log(Session.get('previousPage'));
       Router.go('/cooking');
     }
   });
 
+  Template.selection.helpers({
+    selectedBurger: function () {
+      var burger = Products.findOne(Session.get("selectedBurger"));
+      return burger && burger.name;
+    },
+    selectedCooking: function () {
+      var cooking = Cookings.findOne(Session.get("selectedCooking"));
+      return cooking && cooking.name;
+    },
+    selectedBacon: function () {
+      return Session.get("bacon");
+    },
+    selectedDrink: function () {
+      var drink = Products.findOne(Session.get("selectedDrink"));
+      return drink && drink.name;
+    },
+    confirmedMenu: function () {
+      return Session.get("confirmedMenu");
+    }
+  });
 };

@@ -1,35 +1,6 @@
-<template name= "takeAway">
-      <header>
-        <button class="left arrow">
-        <div class="label"></div>
-        &nbsp;
 
-        &nbsp;
-
-        </button>
-          <div class="logo"></div>
-        &nbsp;
-        <button class="right arrow">
-          <div class="label"></div>
-        &nbsp;
-        </button>
-      </header>
-    <div class="content-scrollable">
-      <div class="outer">
-        <h1 class="title"> 10€ À EMPORTER </h1>
-        <!-- <div class="subtitle">AVEC FRITES ET BOISSON OFFERTE </div> -->
-
-        {{#if currentUser}}
-            {{> yield}}
-        {{else}}
-            {{> signin}}
-        {{/if}}
-
-      </div>
-    </div>
-
-</template>
 <template name="burgerMenu">
+    <h1 class="title"> 10€ À EMPORTER </h1>
     <ol class="board">
       {{#each burgers}}
         {{> burger}}
@@ -46,14 +17,9 @@
 </template>
 
 <template name="burger">
-
     <li class="burger {{selected}}">
       <span class="name"><h2>{{name}}</h2></span>
       <span class="score"><p>{{ingredients}}</p></span>
       <!-- <span class="arrow"><p>></p></span> -->
     </li>
-
-
 </template>
-
-

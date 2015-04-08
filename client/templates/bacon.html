@@ -1,5 +1,10 @@
 <template name="bacon">
-  <h1>Souhaitez-vous ajouter du bacon?</h1>
-   <button class="yes">Oui</button>
-   <button class="no">Non merci</button>
+  {{> selection}}
+  <div class="questionContainer">
+    <h1 class="title">Souhaitez-vous ajouter du bacon?</h1>
+    <div class="answer">
+       <button class="yes btn-primary">Oui</button>
+       <button class="no btn-primary">Non merci</button>
+    </div>
+  </div>
 </template>

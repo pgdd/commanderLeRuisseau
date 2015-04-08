@@ -214,17 +214,17 @@ ul li {
 @import url(http://fonts.googleapis.com/css?family=Lato:400,900);  /* <-- Just for the demo, Yes I like pretty fonts... */
 
 .square {
-    border-width:1px;
-    border-style:dotted;
+    border-width:3px;
+    border-style:solid;
     border-color:black;
     float:left;
     position: relative;
-    width: 45%;
-    padding-bottom : 45%; /* = width for a 1:1 aspect ratio */
-    margin:1.66%;
+    width: 35%;
+    padding-bottom : 31%; /* = width for a 1:1 aspect ratio */
+    margin:5.66%;
     overflow:hidden;
-    background-color: rgba(248, 248, 248, 0.9);
-    background-image: linear-gradient(0deg, rgb(200, 199, 204), rgb(200, 199, 204) 50%);
+    // background-color: rgba(248, 248, 248, 0.9);
+    // background-image: linear-gradient(0deg, rgb(200, 199, 204), rgb(200, 199, 204) 50%);
 }
 
 .content {
@@ -275,7 +275,7 @@ header {
   width: 100%;
   padding-top: 2.9px;
   margin-bottom: 100em;
-  background-color: rgba(248, 248, 248, 0.9);
+  // background-color: rgba(248, 248, 248, 0.9);
   background-image: linear-gradient(0deg, rgb(200, 199, 204), rgb(200, 199, 204) 50%);
   background-size: 100% 1px;
   background-repeat: no-repeat;
@@ -286,6 +286,7 @@ header {
           user-select: none;
   -webkit-touch-callout: none;
 }
+
 header button {
   position: absolute;
   top: 0;
@@ -300,6 +301,7 @@ header button {
   text-overflow: ellipsis !important; /* why so !important ? */
   max-width: 140px;
 }
+
 header button:active {
   opacity: 0.3;
 }
@@ -323,8 +325,9 @@ header button.left {
 }
 header button.left.arrow {
   padding-left: 23px;
-  background-image: url(../img/backBtn.svg);
+  background-image: url(backBtn.svg);
   background-position: left bottom;
+  // content: 'hello';
 }
 header button.right {
   right:0;
@@ -333,7 +336,8 @@ header button.right {
 }
 header button.right.arrow {
   padding-right: 23px;
-  background-image: url(../img/nextBtn.svg);
+  content: '\203a';
+  background-image: url(basket.svg);
   background-position: right bottom;
 }
 .burger:after {
@@ -344,4 +348,79 @@ header button.right.arrow {
   margin-top: -17px;
   font: bold 32px/1 Avenir, Arial, sans-serif;
   color: #a7a7a7;
+}
+
+.selection {
+  margin-top: 3%;
+  margin-bottom: 25%;
+}
+
+.burgerSelection {
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: .1em;
+  margin: 0 0 .25em;
+  text-align: center;
+  text-indent: .3em;
+  text-transform: uppercase;
+  line-height: 2em;
+}
+
+.cookingSelection {
+  font-size: 8px;
+  text-align: right;
+  letter-spacing: .1em;
+  margin: 0 0 .25em;
+  text-align: center;
+  text-indent: .3em;
+  text-transform: uppercase;
+  line-height: 2em;
+}
+.baconSelection {
+  font-size: 8px;
+  text-align: right;
+  letter-spacing: .1em;
+  margin: 0 0 .25em;
+  text-align: center;
+  text-indent: .3em;
+  text-transform: uppercase;
+  line-height: 2em;
+}
+
+.plus {
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: .1em;
+  // margin: 0 0 .25em;
+  text-align: center;
+  text-indent: .3em;
+  text-transform: uppercase;
+  line-height: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.question {
+  margin: 0 auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+}
+
+.answer {
+  margin-top: 50px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.answer > button {
+  // margin: 0 auto;
+  text-align: center;
+  width: 190px;
+  height: 50px;
+  margin: 8px;
+}
+
+button .addmenu {
+
+
 }
