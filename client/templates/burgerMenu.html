@@ -1,6 +1,6 @@
 
 <template name="burgerMenu">
-    <h1 class="title"> 10€ À EMPORTER </h1>
+    <!-- <h1 class="title"> 10€ À EMPORTER avec fritte maison et boisson  </h1> -->
     <ol class="board">
       {{#each burgers}}
         {{> burger}}
@@ -14,11 +14,13 @@
     {{else}}
       <div class="message">Click a burger</div>
     {{/if}} -->
+    <div class="message">À EMPORTER</div>
+
 </template>
 
 <template name="burger">
     <li class="burger {{selected}}">
-      <span class="name"><h2>{{name}}</h2></span>
+      <span class="name"><h2>{{name}} <span class="price">{{price}}€</span> <span class="extraBacon">extra bacon 1€</span></h2></span>
       <span class="score"><p>{{ingredients}}</p></span>
       <!-- <span class="arrow"><p>></p></span> -->
     </li>

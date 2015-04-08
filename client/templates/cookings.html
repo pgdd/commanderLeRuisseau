@@ -1,14 +1,15 @@
 <template name="cookings">
   {{> selection}}
-  <div class="question">
-    <h1 class="title"> Quelle cuisson préférez-vous? </h1>
+  <div class="questionContainer">
+    <h1 class="title question"> Quelle cuisson préférez-vous? </h1>
+    <div class="answer">
+      <div class = "cookingSquare">
+        {{#each cookings}}
+          {{> cooking}}
+        {{/each}}
+      </div>
+    </div>
   </div>
-  <div class="answer">
-    {{#each cookings}}
-      {{> cooking}}
-    {{/each}}
-  </div>
-
 </template>
 <template name="cooking">
 

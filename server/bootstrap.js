@@ -17,10 +17,10 @@ Meteor.startup(function(){
       Products.insert({name:"Veggie burger",catName:"Burger", ingredients:"(Steak de pois chiche carottes, cumin, sauce jus de citron coriandre et raifort)",price: 12}),
       Products.insert({name:"Paire de mini burger",catName:"Burger", ingredients: "(Au choix. 2 minis burgers à la carte sauf veggie)", price: 14}),
       Products.insert({name:"Coca",catName:"Drinks"}),
-      Products.insert({name:"Coca",catName:"Drinks"}),
-      Products.insert({name:"Coca",catName:"Drinks"}),
-      Products.insert({name:"Coca",catName:"Drinks"}),
-      Products.insert({name:"Coca",catName:"Drinks"})
+      Products.insert({name:"Coca light",catName:"Drinks"}),
+      Products.insert({name:"Orangina",catName:"Drinks"}),
+      Products.insert({name:"Perrier",catName:"Drinks"}),
+      Products.insert({name:"Evian",catName:"Drinks"})
     };
 
     if(Categories.find().count() === 0){

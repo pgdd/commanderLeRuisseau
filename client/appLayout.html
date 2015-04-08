@@ -20,11 +20,19 @@
       <h1 class="title">Frites Maison (offert)</h1>
       <div class="plus">+</div>
       <h1 class="title">{{selectedDrink}}</h1>
-      <div class="message">
+      <!-- <div class="message"> -->
         <!-- <button class="addmenu">AJOUTER UN MENU</button> -->
-        <button class="btn-primary">COMMANDER</button>
-      </div>
+        <!-- <button class="btn-primary order">COMMANDER</button> -->
+        {{ >doubleButton}}
+      <!-- </div> -->
     {{/if}}
+  </div>
+</template>
+<template name="doubleButton">
+  <div class="message">
+       <button class="addMenu btn-primary">Ajouter<br>un menu</button>
+       <button class="order btn-primary">Commander</button>
+
   </div>
 </template>
 
