@@ -73,7 +73,7 @@ if (Meteor.isClient) {
       return drink && drink.name;
     },
     confirmedMenu: function () {
-      return Session.get("confirmedMenu");
+      return Session.get("confirmationIsInHold");
     }
   });
 };

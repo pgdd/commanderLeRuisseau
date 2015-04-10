@@ -9,27 +9,33 @@
   <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit.css">
 </head>
 <template name="selection">
-  <div class="selection">
-    <h1 class="burgerSelection"> {{selectedBurger}} </h1>
-    <h1 class="cookingSelection">{{selectedCooking}} </h1>
-    {{#if selectedBacon}}
-      <h1 class="baconSelection">Suppl.bacon</h1>
-    {{/if}}
-    {{#if confirmedMenu}}
-      <div class="plus">+</div>
-      <h1 class="title">Frites Maison (offert)</h1>
-      <div class="plus">+</div>
-      <h1 class="title">{{selectedDrink}}</h1>
-      <!-- <div class="message"> -->
-        <!-- <button class="addmenu">AJOUTER UN MENU</button> -->
-        <!-- <button class="btn-primary order">COMMANDER</button> -->
-        {{ >doubleButton}}
-      <!-- </div> -->
-    {{/if}}
+  <div class ="questionContainer">
+    <div class="selection">
+      <h1 class="burgerSelection"> {{selectedBurger}} </h1>
+      <h1 class="cookingSelection">{{selectedCooking}} </h1>
+      {{#if selectedBacon}}
+        <h1 class="baconSelection">Suppl.bacon</h1>
+      {{/if}}
+      {{#if confirmedMenu}}
+        <div class="plus">+</div>
+        <h1 class="title">Frites Maison (offert)</h1>
+        <div class="plus">+</div>
+        <h1 class="title">{{selectedDrink}}</h1>
+        <!-- <div class="message"> -->
+          <!-- <button class="addmenu">AJOUTER UN MENU</button> -->
+          <!-- <button class="btn-primary order">COMMANDER</button> -->
+        <!-- </div> -->
+        <div class="total">TOTAL À EMPORTER: 11€</div>
+
+      {{/if}}
+    </div>
   </div>
+  {{#if confirmedMenu}}
+      {{ >doubleButton}}
+  {{/if}}
 </template>
 <template name="doubleButton">
-  <div class="message">
+  <div class="bottom">
        <button class="addMenu btn-primary">Ajouter<br>un menu</button>
        <button class="order btn-primary">Commander</button>
 
@@ -66,11 +72,11 @@
 
         <!-- <div class="subtitle">AVEC FRITES ET BOISSON OFFERTE </div> -->
 
-        {{#if currentUser}}
+        <!-- {{#if currentUser}} -->
             {{> yield}}
-        {{else}}
-            {{> signin}}
-        {{/if}}
+        <!-- {{else}} -->
+            <!-- {{> signin}} -->
+        <!-- {{/if}} -->
 
       </div>
     </div>

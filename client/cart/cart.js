@@ -30,4 +30,5 @@ Template.cart.events({
 
 Template.cart.rendered = function () {
     Session.set("previousPage", '/');
+    Session.set('confirmationIsInHold', true);
 };

@@ -1,9 +1,9 @@
 App.info({
-  name: 'Todos',
-  description: 'A simple todo list app built in Meteor.',
-  author: 'Percolate Studio Team',
-  email: 'us@percolatestudio.com',
-  website: 'http://percolatestudio.com',
+  name: 'Le Ruisseau',
+  description: 'A simple app to take away burgers at le Ruisseau',
+  author: 'PG',
+  email: 'pierregiddio@gmail.com',
+  website: 'http://www.google.fr',
   version: '0.0.1'
 });
 

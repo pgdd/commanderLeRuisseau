@@ -1,11 +1,13 @@
 <template name="drinks">
-    {{> selection}}
-    <h1 class="title question">Quelle boisson pour votre menu ?</h1>
-    <ol class="board">
-      {{#each drinks}}
-        {{> drink}}
-      {{/each}}
-    </ol>
+    <div class="questionContainer">
+      {{> selection}}
+      <h1 class="title question">Quelle boisson pour votre menu ?</h1>
+      <ol class="board">
+        {{#each drinks}}
+          {{> drink}}
+        {{/each}}
+      </ol>
+    </div>
     <!-- {{#if selectedName}}
       <div class="details">
         <div class="name">{{selectedName}}</div>

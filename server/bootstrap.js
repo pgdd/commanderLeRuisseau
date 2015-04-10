@@ -40,8 +40,8 @@ Meteor.startup(function(){
 Meteor.methods({
     //delete when live
     removeAll:function(){
-        Products.remove({});
-        Categories.remove({});
+        // Products.remove({});
+        // Categories.remove({});
         CartItems.remove({});
     },
     addToCart:function(qty,product,cooking,bacon,drink,session){
