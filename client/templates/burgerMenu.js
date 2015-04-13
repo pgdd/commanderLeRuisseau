@@ -8,8 +8,12 @@ if (Meteor.isClient) {
     Meteor.subscribe("users");
   };
 
-  Template.takeAway.rendered = function () {
-  };
+  // Template.takeAway.rendered = function () {
+  //   return Tracker.autorun(function () {
+  //     var cartItems = CartItems.find({})
+  //     var count = cartItems.count();
+  //   });
+  // };
 
   Template.takeAway.helpers({
     initiatedOrder: function () {

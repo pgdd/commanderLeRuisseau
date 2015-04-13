@@ -11,11 +11,7 @@ if (Meteor.isClient) {
     'click .left': function () {
       if (Session.get("confirmationIsInHold")) {
         Meteor.call('removeAll');
-        delete Session.keys['selectedBurger'];
-        delete Session.keys['selectedCooking'];
-        delete Session.keys['bacon'];
-        delete Session.keys['selectedDrink'];
-        delete Session.keys['confirmationIsInHold'];
+        removeSessionsSelection();
         Router.go(Session.get("previousPage"));
       } else {
         return Router.go(Session.get("previousPage"));
@@ -23,6 +19,14 @@ if (Meteor.isClient) {
     },
     'click .right': function () {
       Router.go('/cart');
-    }
+    },
   });
 };
+
+function removeSessionsSelection() {
+  delete Session.keys['selectedBurger'];
+  delete Session.keys['selectedCooking'];
+  delete Session.keys['bacon'];
+  delete Session.keys['selectedDrink'];
+  delete Session.keys['confirmationIsInHold'];
+}

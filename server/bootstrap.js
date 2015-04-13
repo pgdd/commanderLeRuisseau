@@ -20,13 +20,16 @@ Meteor.startup(function(){
       Products.insert({name:"Coca light",catName:"Drinks"}),
       Products.insert({name:"Orangina",catName:"Drinks"}),
       Products.insert({name:"Perrier",catName:"Drinks"}),
-      Products.insert({name:"Evian",catName:"Drinks"})
+      Products.insert({name:"Evian",catName:"Drinks"}),
+      Products.insert({name:"bacon", price:"2", catName:"Exta"})
     };
 
     if(Categories.find().count() === 0){
         var stid = Categories.insert({name:'Starter', cat:stid});
         var buid = Categories.insert({name:'Burger', cat:buid});
         var drid = Categories.insert({name:'Drinks', cat:drid});
+        var exid = Categories.insert({name:'Extra', cat:exid});
+
     }
 
     if(Cookings.find().count() === 0){

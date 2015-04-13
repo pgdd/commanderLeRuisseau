@@ -1,36 +1,28 @@
 <template name="cart">
-    {{> selection}}
-<!--     <div class="page-header">
-        <h1>
-            <small>Votre commande</small>
-        </h1>
-    </div>
-    <table class="span4 table table-striped table-bordered table-hover">
+    <h1 class="cartTitle">
+        <span>À EMPORTER</span>
+    </h1>
+    <table class="sturdy">
         <thead>
-        <th>Qty</th>
-        <th>Product</th>
-        <th>Price</th>
-        <th></th>
+        <th class="qty">Qté</th>
+        <th class="description">Menu</th>
+        <th class="price">Prix</th>
+        <th class="remove"></th>
         </thead>
         <tbody>
         {{#each cartitems}}
-        <tr>
-            <td>{{qty}}</td>
-            <td>{{productname}}</td>
-            <td>{{currency price}}</td>
-            <td><span class="label-important label removeci">X</span></td>
-        </tr>
+            {{> cartitem}}
         {{else}}
         <tr>
             <td colspan="3">No Products in Cart</td>
         </tr>
         {{/each}}
         <tr>
-            <td class="totalcol" colspan="2">SubTotal:</td>
+            <td class="totalcol" colspan="2">Sous-total:</td>
             <td colspan="2">{{currency cartitems.subtotal}}</td>
         </tr>
         <tr>
-            <td class="totalcol" colspan="2">Tax 6%:</td>
+            <td class="totalcol" colspan="2">Taxe 0%:</td>
             <td colspan="2">{{currency cartitems.tax}}</td>
         </tr>
         <tr>
@@ -38,6 +30,52 @@
             <td colspan="2">{{currency cartitems.total}}</td>
         </tr>
         </tbody>
-    </table> -->
+    </table>
+    {{ >doubleButton}}
+</template>
+
+<template name="cartitem">
+
+    <tr>
+        <td class="qty">{{qty}}</td>
+        <td class="description">
+            <span class="burgerInCart">{{productname}}</span>
+            <span class="cooking"> ({{cooking.name}})</span>
+        {{#if isBacon bacon}}
+            <br><span class="bacon"> - Extra Bacon<!-- <span class="extraPrice">{{extraPrice}}</span> --></span>
+        {{/if}}
+            <br><span class="addition">- Frites maison et {{drink.name}}<span class="extraPrice"> (offert)</span></span>
+        </td>
+<!--         <td>
+            {{#if isBacon bacon}}
+                {{extraPrice}}
+            {{/if}}
+        </td> -->
+   <!--      <td>
+            {{#if isBacon bacon}}
+                {{extraPrice}}
+            {{/if}}
+        </td> -->
+        <td class="currencyPrice">{{currency price}}</td>
+        <td class="remove"><span class="label-important label removeci">X</span></td>
+    </tr>
 
 </template>
+
+<template name="cartittem">
+<tr>
+    <th class="tg-s6z2" rowspan="4"><span class="label-important label removeci">X</span></th>
+    <th class="tg-031e">{{productname}}<span class="cooking">cuit. ({{cooking.name}})</span></th>
+    <th class="tg-031e">{{price}}<br></th>
+  </tr>
+  {{#if isBacon bacon}}
+      <tr>
+        <td class="tg-031e">Extra bacon</td>
+        <td class="tg-031e">{{extraPrice}}</td>
+      </tr>
+  {{/if}}
+
+</template>
+
+
+
